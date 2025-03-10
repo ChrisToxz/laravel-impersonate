@@ -84,6 +84,14 @@ class ImpersonateServiceProvider extends \Illuminate\Support\ServiceProvider
                 return '<?php endif; ?>';
             });
 
+            $bladeCompiler->directive('notImpersonating', function ($guard = null) {
+                return "<?php if (!is_impersonating({$guard})) : ?>";
+            });
+
+            $bladeCompiler->directive('endNotImpersonating', function () {
+                return '<?php endif; ?>';
+            });
+
             $bladeCompiler->directive('canImpersonate', function ($guard = null) {
                 return "<?php if (can_impersonate({$guard})) : ?>";
             });
