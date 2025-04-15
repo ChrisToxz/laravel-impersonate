@@ -182,8 +182,6 @@ class ImpersonateManager
 
     public function getTakeRedirectTo(): string
     {
-            public function getTakeRedirectTo(): string
-    {
         // Get the intended redirect, e.g. saved in session or the previous URL
         $previousUrl = session()->pull('impersonate.redirect_to', url()->previous());
         // Define a safe fallback route, e.g., 'home' or another route name
@@ -230,8 +228,7 @@ class ImpersonateManager
         //     $uri = config('laravel-impersonate.take_redirect_to');
         // }
 
-        // return $uri;
-    }
+        // return $uri
 
     public function getLeaveRedirectTo(): string
     {
